@@ -11,10 +11,19 @@ namespace Player
 	}
 	PlayerState PlayerModel::GetPlayerState()
 	{
-		return PlayerState();
+		return player_state;
 	}
 	void PlayerModel::SetPlayerState(PlayerState new_player_state)
 	{
 		player_state = new_player_state;
+	}
+	void PlayerModel::initialize()
+	{
+	}
+	void PlayerModel::update()
+	{
+	}
+	void PlayerModel::render()
+	{
 	}
 }

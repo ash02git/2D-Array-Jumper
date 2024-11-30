@@ -2,11 +2,13 @@
 #include "../../header/UI/UIElement/ImageView.h"
 namespace Player
 {
+	class PlayerController;
 	class PlayerView
 	{
 	private:
 		UI::UIElement::ImageView* player_image;
 		sf::RenderWindow* game_window;
+		PlayerController* player_controller;
 
 		float player_height;
 		float player_width;
@@ -19,7 +21,7 @@ namespace Player
 		sf::Vector2f calulcatePlayerPosition();
 
 	public:
-		PlayerView();
+		PlayerView(PlayerController *controller);
 		~PlayerView();
 
 		void initialize();
