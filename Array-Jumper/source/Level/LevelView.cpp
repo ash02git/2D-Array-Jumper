@@ -2,6 +2,7 @@
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Global/Config.h"
 #include "../../header/Level/LevelController.h"
+#include <iostream>
 
 namespace Level
 {
@@ -36,6 +37,13 @@ namespace Level
 	void LevelView::render()
 	{
 		drawLevel();
+	}
+
+	BoxDimensions LevelView::getBoxDimensions()
+	{
+		calculateBoxDimensions();
+		std::cout << "Value of boxdimensions being passed from LevelView is " << box_dimensions.box_height<<"," << box_dimensions.box_width << "\n";
+		return box_dimensions;
 	}
 
 	void LevelView::createImages()
