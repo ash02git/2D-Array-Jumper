@@ -1,9 +1,9 @@
 #include "../../header/Player/PlayerModel.h"
 namespace Player
 {
-	int PlayerModel::GetCurrentPosition()
+	int PlayerModel::getCurrentPosition()
 	{
-		return 0;
+		return current_position;
 	}
 	void PlayerModel::SetCurrentPosition(int newPosition)
 	{

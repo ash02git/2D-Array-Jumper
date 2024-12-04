@@ -2,6 +2,8 @@
 #include "../../header/Level/LevelController.h"
 namespace Level
 {
+	class LevelController;
+	struct BoxDimensions;
 	class LevelService
 	{
 	private:
@@ -15,5 +17,7 @@ namespace Level
 		void intialize();
 		void update();
 		void render();
+
+		BoxDimensions getBoxDimensions();
 	};
 }
