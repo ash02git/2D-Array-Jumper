@@ -29,7 +29,7 @@ namespace Level
 	}
 	BlockType LevelController::getCurrentBoxValue(int currentPosition)
 	{
-		return current_level_data.level_boxes[currentPosition];
+		return level_model->getCurrentBoxValue(currentPosition);
 	}
 	BoxDimensions LevelController::getBoxDimensions()
 	{
