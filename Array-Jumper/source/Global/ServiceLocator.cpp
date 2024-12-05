@@ -1,7 +1,7 @@
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Main/GameService.h"
 #include "../../header/Event/EventService.h"
-
+#include <iostream>
 
 namespace Global
 {
@@ -90,7 +90,7 @@ namespace Global
 
 	GraphicService* ServiceLocator::getGraphicService() { return graphic_service; }
 
-	EventService* ServiceLocator::getEventService() { return event_service; }
+	EventService* ServiceLocator::getEventService() { std::cout << "Returned event service\n";return event_service; }
 
 	SoundService* ServiceLocator::getSoundService() { return sound_service; }
 

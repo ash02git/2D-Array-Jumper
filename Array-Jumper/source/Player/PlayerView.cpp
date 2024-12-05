@@ -45,7 +45,7 @@ namespace Player
 		std::cout << "Current box dimensions. box width = " << current_box_dimensions.box_width << "\n";
 		std::cout << "Current box dimensions. box height = " << current_box_dimensions.box_height << "\n";
 
-		float xPosition = 143.0f*0.3f + static_cast<float>(player_controller->getCurrentPosition()) * (current_box_dimensions.box_width + current_box_dimensions.box_spacing);//current_box_dimensions.box_width changed to 143.0f   current_box_dimensions.box_spacing changed to 143.f
+		float xPosition = 143.0f*0.3f + static_cast<float>(player_controller->getCurrentPosition()) * (143.0f + 143.0f * 0.3f);//current_box_dimensions.box_width changed to 143.0f   current_box_dimensions.box_spacing changed to 143.f
 		float yPosition = static_cast<float>(game_window->getSize().y) - 143.0f - current_box_dimensions.bottom_offset - player_height;//current_box_dimensions.box_height changed to 143
 		return sf::Vector2f(xPosition, yPosition);
 	}
