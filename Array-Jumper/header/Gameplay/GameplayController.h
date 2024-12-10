@@ -6,7 +6,9 @@ namespace Gameplay
 	{
 	private:
 		void processObstacle();
+		void processEndBlock();
 		bool isObstacle(Level::BlockType value);
+		bool isEndBlock(Level::BlockType value);
 	public:
 		void initialize();
 		void update();

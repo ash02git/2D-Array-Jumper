@@ -15,9 +15,21 @@ namespace Gameplay
 		ServiceLocator::getInstance()->getPlayerService()->takeDamage();
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::DEATH);
 	}
+	void GameplayController::processEndBlock()
+	{
+		ServiceLocator::getInstance()->getPlayerService()->levelComplete();
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::LEVEL_COMPLETE);
+		GameService::setGameState(GameState::CREDITS);
+	}
 	bool GameplayController::isObstacle(Level::BlockType value)
 	{
 		if (value == BlockType::OBSTACLE_ONE || value == BlockType::OBSTACLE_TWO)
+			return true;
+		return false;
+	}
+	bool GameplayController::isEndBlock(Level::BlockType value)
+	{
+		if (value == BlockType::TARGET)
 			return true;
 		return false;
 	}
@@ -36,5 +48,7 @@ namespace Gameplay
 
 		if (isObstacle(value))
 			processObstacle();
+		if (isEndBlock(value))
+			processEndBlock();
 	}
 }
