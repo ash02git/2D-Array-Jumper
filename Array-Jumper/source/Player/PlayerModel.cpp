@@ -22,11 +22,17 @@ namespace Player
 	}
 	void PlayerModel::initialize()
 	{
+		
 	}
 	void PlayerModel::update()
 	{
 	}
 	void PlayerModel::render()
 	{
+	}
+	void PlayerModel::resetPlayer()
+	{
+		current_position = 0;
+		player_state = PlayerState::ALIVE;
 	}
 }
