@@ -3,7 +3,7 @@
 #include "../../header/Main/GameService.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/UI/UIElement/TextView.h"
-
+#include "../../header/Gameplay/GameplayUIController.h"
 
 
 namespace UI
@@ -15,6 +15,7 @@ namespace UI
     using namespace Instructions;
     using namespace Global;
     using namespace UIElement;
+    using namespace GameplayUI;
 
     UIService::UIService()
     {
@@ -22,6 +23,7 @@ namespace UI
         main_menu_ui_controller = nullptr;
         credits_screen_ui_controller = nullptr;
         instructions_ui_controller = nullptr;
+        gameplay_ui_controller = nullptr;
 
         createControllers();
     }
@@ -37,6 +39,7 @@ namespace UI
         main_menu_ui_controller = new MainMenuUIController();
         credits_screen_ui_controller = new CreditsScreenUIController();
         instructions_ui_controller = new InstructionsUIController();
+        gameplay_ui_controller = new GameplayUIController();
     }
 
     void UIService::initialize()
@@ -51,6 +54,7 @@ namespace UI
         main_menu_ui_controller->initialize();
         credits_screen_ui_controller->initialize();
         instructions_ui_controller->initialize();
+        gameplay_ui_controller->initialize();
     }
 
     void UIService::initializeUIElements()
@@ -74,6 +78,8 @@ namespace UI
         case GameState::CREDITS:
             credits_screen_ui_controller->update();
             break;
+        case GameState::GAMEPLAY:
+            gameplay_ui_controller->update();
         }
     }
 
@@ -93,6 +99,8 @@ namespace UI
         case GameState::CREDITS:
             credits_screen_ui_controller->render();
             break;
+        case GameState::GAMEPLAY:
+            gameplay_ui_controller->render();
         }
     }
 
@@ -107,5 +115,6 @@ namespace UI
         delete(main_menu_ui_controller);
         delete(credits_screen_ui_controller);
         delete(instructions_ui_controller);
+        delete(gameplay_ui_controller);
     }
 }
