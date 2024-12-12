@@ -1,5 +1,6 @@
 #pragma once
 #include "../../header/Level/LevelData.h"
+#include "LevelConfiguration.h"
 namespace Level
 {
 	struct BoxDimensions
@@ -13,11 +14,17 @@ namespace Level
 	class LevelModel
 	{
 	private:
-		LevelData current_level_data;
+		//LevelData current_level_data;
+		LevelConfiguration level_configuration;
+		int current_level_index;
 
 	public:
 		LevelModel();
 		~LevelModel();
 		BlockType getCurrentBoxValue(int currentPosition);
+		void loadNextLevel();
+		int getCurrentLevelNumber();
+		bool isLastLevel();
+		void reset();
 	};
 }
