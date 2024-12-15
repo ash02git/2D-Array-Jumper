@@ -21,5 +21,11 @@ namespace Level
 
 		BlockType getCurrentBoxValue(int currentPosition);
 		BoxDimensions getBoxDimensions();
+
+		void loadNextLevel();
+		int getCurrentLevelNumber();
+		bool isLastLevel();
+
+		void reset();
 	};
 }
