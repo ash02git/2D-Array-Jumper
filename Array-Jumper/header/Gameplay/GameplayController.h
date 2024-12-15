@@ -10,7 +10,12 @@ namespace Gameplay
 		bool isObstacle(Level::BlockType value);
 		bool isEndBlock(Level::BlockType value);
 
+		bool isLastLevel();
+		void loadNextLevel();
+
 		void gameOver();
+
+		void gameWon();
 	public:
 		void initialize();
 		void update();
